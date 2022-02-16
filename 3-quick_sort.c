@@ -15,15 +15,15 @@ quick_s(array, 0, size - 1, size);
 }
 /**
  * partition - partition
- * @array: pointer 
+ * @array: pointer
  * @lower: int
  * @higher: int
  * @size: length oh the array
- * Return: i 
+ * Return: i
  */
 int partition(int *array, int lower, int higher, size_t size)
 {
-int i = lower -1, j = lower;
+int i = lower - 1, j = lower;
 int pivot = array[higher], aux = 0;
 for (; j < higher; j++)
 {
@@ -41,12 +41,12 @@ print_array(array, size);
 }
 if (array[i + 1] != array[higher])
 {
-aux = array[i +1];
+aux = array[i + 1];
 array[i + 1] = array[higher];
 array[higher] = aux;
 print_array(array, size);
 }
-return (i+1);
+return (i + 1);
 }
 
 /**
@@ -55,7 +55,7 @@ return (i+1);
  * @lower: lower
  * @higher: higher
  * @size: array's size
- * Return: void  
+ * Return: void
  */
 void quick_s(int *array, int lower, int higher, size_t size)
 {
@@ -63,7 +63,7 @@ int pivot;
 if (lower < higher)
 {
 pivot = partition(array, lower, higher, size);
-quick_s(array, lower, pivot -1, size);
+quick_s(array, lower, pivot - 1, size);
 quick_s(array, pivot + 1, higher, size);
 }
 }
